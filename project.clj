@@ -5,4 +5,4 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[clojure-opennlp "0.3.1"]
                  [org.clojure/clojure "1.5.1"]
-                 [com.novemberain/monger "1.7.0-beta1"]])
+                 [congomongo "0.4.1"]])

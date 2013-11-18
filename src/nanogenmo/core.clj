@@ -1,5 +1,6 @@
 (ns nanogenmo.core
   ( :require [nanogenmo.extract :as extract]
+             [nanogenmo.persist :as persist]
  ))
 
 ;; (defn you?
@@ -15,3 +16,5 @@
   (re-find #"^[^\w]*(Y|y)ou" s))
 
 (def book-url "http://www.gutenberg.org/cache/epub/844/pg844.txt")
+(def sentences (extract/extract-from-gutenberg book-url you? "The Importance of Being Earnest" "Oscar Wilde"))
+(persist/persist sentences)

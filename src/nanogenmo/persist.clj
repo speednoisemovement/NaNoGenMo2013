@@ -1,4 +1,16 @@
 (ns nanogenmo.persist
-  (:require [monger.core :as mg]
-            [monger.collection :as mc]))
-;;TODO: write a function that wraps db connection/disconnection and persists some sentences
+  (:require [somnium.congomongo :as mongo] ))
+
+(def test-db-name "nanogenmo-test")
+(def db-name "nanogenmo2013")
+
+(def collection-name :sentences)
+
+(def conn (mongo/make-connection test-db-name))
+
+
+
+(def persist-sentences
+  [sentences]
+  (with-mongo conn
+    (dorun (mongo/mass-insert! collection-name sentences))))
