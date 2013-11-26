@@ -1,12 +1,7 @@
 (ns nanogenmo.core
   ( :require [nanogenmo.extract :as extract]
              [nanogenmo.persist :as persist]
- ))
-
-;; (defn you?
-;;   "Does the sentence start with a you? (Extra naive edition)"
-;;   [s]
-;;   (= "You" (subs s 0 3)))
+             [twitter :as tw]))
 
 (defn you?
   "Does the sentence start with a 'you'? (Less naive edition)"
@@ -15,6 +10,11 @@
   ;;mostly to catch quotes, but who knows, let's see!
   (re-find #"^[^\w]*(Y|y)ou" s))
 
-(def book-url "http://www.gutenberg.org/cache/epub/844/pg844.txt")
-(def sentences (extract/extract-from-gutenberg book-url you? "The Importance of Being Earnest" "Oscar Wilde"))
-(persist/persist sentences)
+;; (def sentences (extract/extract-from-gutenberg "http://www.gutenberg.org/files/39293/39293-0.txt"
+;;                                                you?
+;;                                                "The Gentlemen's Book of Etiquette and
+;; Manual of Politeness"
+;;                                                "Cecil B. Hartley"))
+;; (persist/persist-sentences sentences)
+;; (println (first sentences))
+;; (count sentences)

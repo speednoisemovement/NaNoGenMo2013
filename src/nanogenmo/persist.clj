@@ -7,10 +7,11 @@
 (def collection-name :sentences)
 
 (def conn (mongo/make-connection test-db-name))
+(println conn)
+(def fetched (mongo/with-mongo conn
+               (mongo/fetch :sentences :sort {:wordcount -1})))
 
-
-
-(def persist-sentences
+(defn persist-sentences
   [sentences]
-  (with-mongo conn
+  (mongo/with-mongo conn
     (dorun (mongo/mass-insert! collection-name sentences))))

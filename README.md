@@ -1,14 +1,11 @@
-# nanogenmo
+# Work in progress
 
-A Clojure library designed to ... well, that part is up to you.
+Glue code and write-up coming soon. [NaNoGenMo](https://github.com/dariusk/NaNoGenMo) is National Novel Generation Month.
 
-## Usage
-
-FIXME
 
 ## License
 
-Copyright © 2013 FIXME
+Copyright © 2013 Leonard Grey
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
